@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Thêm danh mục</h1>
+<div mat-dialog-content>
+  <form [formGroup]="categoryForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Tên Sản Phẩm</mat-label>
+      <input formControlName="categoryName" matInput placeholder="Name">
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addCategory()">{{actionBtn}}</button>
+  </div>
+</div>

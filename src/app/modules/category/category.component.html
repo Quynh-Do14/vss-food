@@ -1,0 +1,55 @@
+<h1 class="title">Quản lý danh mục</h1>
+<div class="tbl-main">
+    <mat-toolbar>
+        <mat-form-field appearance="standard">
+            <input type="search" matInput placeholder="Tìm kiếm" name="search">
+            <button matSuffix mat-button>
+            </button>
+        </mat-form-field>
+        
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="warn" (click)="openDialog()">Thêm mới</button>
+    </mat-toolbar>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="categoryCode">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Mã danh mục </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.categoryCode}} </mat-cell>
+            </ng-container>
+            <!-- Progress Column -->
+            <ng-container matColumnDef="categoryName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Tên danh mục </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.categoryName}} </mat-cell>
+            </ng-container>
+
+
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="createdDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Cập Nhật Ngày</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.createdDate |date:'dd/MM/yyyy'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="modifiedDate">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Ngày Sửa Đổi</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.modifiedDate |date:'dd/MM/yyyy'}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Lựa Chọn </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="editcategory(row)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deleteCategory(row.id)" color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+</div>

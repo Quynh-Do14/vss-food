@@ -1,0 +1,23 @@
+.title{
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.tbl-main{
+    padding: 0 2%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }

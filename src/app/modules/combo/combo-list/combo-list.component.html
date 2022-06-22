@@ -1,0 +1,58 @@
+<h1 class="title">Quản lý Combo</h1>
+<div class="tbl-main">
+    <mat-toolbar>
+        <mat-form-field appearance="standard">
+            <input matInput (keyup)="applyFilter($event)" placeholder="Tìm kiếm" #input>
+        </mat-form-field>
+
+        <span class="example-spacer"></span>
+        <button class="add" mat-raised-button color="" (click)="openDialog()">Thêm mới</button>
+    </mat-toolbar>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Tên combo </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="comboDesc">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Mô tả Combo </th>
+                <td mat-cell *matCellDef="let row"> {{row.comboDesc}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="foods">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Danh sách món </th>
+                <td mat-cell *matCellDef="let row"> {{row.foods}} </td>
+                <input type="text" placeholder="Danh sách món">
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Giá </th>
+                <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Lựa chọn </th>
+                <td mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="onEdit(row)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deleteCombo(row.id)" color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">{{input.value}}</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[ 10, 25, 50, 75,  100]" aria-label="Select page of users">
+        </mat-paginator>
+    </div>
+
+</div>

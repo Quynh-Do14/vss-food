@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Người giao</h1>
+<div mat-dialog-content>
+  <form [formGroup]="shipperForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>ID</mat-label>
+      <input type="text" matInput formControlName="id">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tên shipper</mat-label>
+      <input type="text" matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input formControlName="phone" matInput placeholder="phone">
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addShipper()">{{actionBtn}}</button>
+  </div>
+</div>

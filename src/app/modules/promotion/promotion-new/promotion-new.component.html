@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Thêm khuyến mãi</h1>
+<div mat-dialog-content>
+  <form [formGroup]="promotionForm" class="example-form">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>FoodID </mat-label>
+      <input type="number" formControlName="foodId" matInput placeholder="Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Title </mat-label>
+      <input type="text" formControlName="title" matInput placeholder="Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>DiscountPercent</mat-label>
+      <input type="number" formControlName="discountPercent" matInput placeholder="Price">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>StartDate</mat-label>
+      <input type="text" formControlName="startDate" matInput placeholder="Price">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>EndDate </mat-label>
+      <input type="text" formControlName="endDate" matInput placeholder="Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input type="text" formControlName="description" matInput placeholder="Price">
+    </mat-form-field>
+
+  </form>
+
+
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addPro()">{{actionBtn}}</button>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Thêm mới món</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productFood">
+    <mat-form-field appearance="outline">
+      <mat-label>Tên Món Ăn</mat-label>
+      <input formControlName="foodName" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Danh mục</mat-label>
+      <mat-select formControlName="categories" placeholder="Category">
+        <mat-option *ngFor="let item of categoryList" [value]="item.id">{{item.categoryName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mô tả</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <input type="file" (change)="upload($event)" formControlName="images" name="fileUpload" multiple="multiple"
+      accept="image/*" />
+    <mat-icon>file_upload</mat-icon>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Giá</mat-label>
+      <input formControlName="price" matInput placeholder="Price">
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addProduct()">{{actionBtn}}</button>
+  </div>
+</div>

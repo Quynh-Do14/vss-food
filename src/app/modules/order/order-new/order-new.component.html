@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Cập nhật trạng thái</h1>
+<div mat-dialog-content>
+  <form [formGroup]="orderForm">
+    <div class="row">
+      <div class="col-12">
+
+        <mat-select formControlName="status" placeholder="Lựa chọn">
+          <label>Trạng thái</label>
+          <mat-option *ngFor="let item of list" [value]="item.id">{{item.name}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addOrder()">{{actionBtn}}</button>
+  </div>
+</div>

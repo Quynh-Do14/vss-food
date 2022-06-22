@@ -1,0 +1,36 @@
+{
+  "productList": [],
+  "category": [
+    {
+      "categoryName": "a",
+      "category": "Milk",
+      "date": "2022-05-12T17:00:00.000Z",
+      "price": "100",
+      "id": 1
+    },
+    {
+      "categoryName": "b",
+      "category": "Food",
+      "date": "2022-05-08T17:00:00.000Z",
+      "price": "30000",
+      "id": 2
+    },
+    {
+      "categoryName": "tôm hùm",
+      "category": "Food",
+      "date": "2022-05-17T17:00:00.000Z",
+      "price": "30000",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

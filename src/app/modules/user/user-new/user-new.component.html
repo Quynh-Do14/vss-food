@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Thêm mới món</h1>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="outline">
+      <mat-label>UserName </mat-label>
+      <input type="text" formControlName="username" matInput placeholder="Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>email</mat-label>
+      <input type="email" formControlName="email" matInput placeholder="Price">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>fullName</mat-label>
+      <input type="text" formControlName="fullName" matInput placeholder="Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>phoneNumber</mat-label>
+      <input type="number" formControlName="phoneNumber" matInput placeholder="Price">
+      <!-- <span *ngIf="userForm.controls['phoneNumber'].errors?.['pattern']">Sai kiểu số điện thoại</span> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>address</mat-label>
+      <input type="text" formControlName="address" matInput placeholder="Price">
+    </mat-form-field>
+
+  </form>
+
+
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addPro()">{{actionBtn}}</button>
+  </div>
+</div>

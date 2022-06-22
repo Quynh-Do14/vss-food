@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Chọn đơn hàng</h1>
+<div mat-dialog-content>
+  <form [formGroup]="shipperForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Đơn hàng</mat-label>
+      <mat-select formControlName="orderId" placeholder="Lựa chọn" multiple>
+        <mat-option *ngFor="let item of orderList" [value]="item.id">{{item.orderCode}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="orderShipper()">{{actionBtn}}</button>
+  </div>
+</div>

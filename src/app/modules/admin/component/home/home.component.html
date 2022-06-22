@@ -1,0 +1,37 @@
+<body>
+  <!-- <div ngClass="head">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 revenue" *ngFor="let item of revenue">
+              <div class="main-head">
+                <img [src]="item.img" >
+              <div class="tit-rev">
+                <p>{{item.title}}: </p>
+                <div class="rev">{{item.rev | number}} </div>
+              </div>
+              </div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+  <div class="chart-bar">
+    <app-barchart></app-barchart>
+    <label>Biểu đồ doanh thu các tháng năm 2022 </label>
+  </div>
+
+  <div class="chart">
+
+    <div class="chart-doug">
+      <app-doughnutchart></app-doughnutchart>
+      <label>Biểu đồ doanh thu 4 quý gần nhất</label>
+
+    </div>
+
+    <div class="chart-line">
+      <app-linechart></app-linechart>
+      <label>Biểu đồ doanh thu năm 2022 </label>
+    </div>
+  </div>
+</body>

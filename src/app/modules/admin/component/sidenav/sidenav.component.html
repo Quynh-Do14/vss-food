@@ -1,0 +1,60 @@
+<body>
+  <mat-nav-list>
+    <div class="logo py-3">
+      <img src="../../../../../assets/logo/logo.png" alt="VSS Food" />
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">WELCOME ADMIN</h2>
+
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="home">
+      <mat-icon class="icon-dash">dashboard</mat-icon> Dashboard
+    </a>
+    <mat-expansion-panel class="mat-expansion">
+      <mat-expansion-panel-header>
+        <mat-icon class="food">room_service</mat-icon>Quản lý thực đơn
+      </mat-expansion-panel-header>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="category">
+        <mat-icon class="icon-category">category</mat-icon> Quản lý danh mục
+      </a>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="product">
+        <mat-icon class="icon-food"> fastfood</mat-icon> Quản lý món
+      </a>
+
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="combo">
+        <mat-icon class="icon-combo"> local_activity</mat-icon> Quản lý Combo
+      </a>
+
+    </mat-expansion-panel>
+    
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="order">
+      <mat-icon class="icon-order">assignment</mat-icon>
+      Quản lý Đơn hàng
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="promotion">
+      <mat-icon class="icon-proto">confirmation_number</mat-icon>
+      Quản lý Khuyến mãi sản phẩm
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="user">
+      <mat-icon class="icon-user">people</mat-icon> Quản lý người dùng
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="feedback">
+      <mat-icon class="icon-feedb">feedback</mat-icon>Quản lý Góp ý
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="shipper">
+      <mat-icon class="icon-shipper"> directions_bike</mat-icon>
+      Quản lý Shipper
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="report">
+      <mat-icon class="icon-reoprt">library_books</mat-icon>
+      Báo Cáo
+    </a>
+  </mat-nav-list>
+
+
+</body>

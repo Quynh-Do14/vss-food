@@ -1,0 +1,133 @@
+body {
+    background-color: #2d323e;
+    /* border-radius: 15px; */
+
+}
+::ng-deep .mat-expansion-panel-header {
+    padding: 0 16px !important;
+}
+
+::ng-deep .mat-nav-list .mat-icon {
+    margin-right: 10px;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important
+}
+
+::ng-deep .mat-expansion-panel-header {
+    height: 48px !important;
+}
+::ng-deep .mat-expansion-panel .mat-list-item {
+    padding-left: 15px !important;
+}
+
+
+.logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+}
+
+img {
+    width: 200px;
+}
+
+.mat-icon {
+    vertical-align: center;
+    margin-right: 1rem;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.mat-list-item {
+    color: white !important;
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+.mat-list-item:hover {
+    background: #596278 !important;
+
+
+}
+
+.list-item-active {
+    color: #94a3b8 !important;
+}
+
+.mat-list-item-content {
+    background: #8890a1 !important;
+}
+
+.mat-list-item-content:hover {
+    background: #2c3344 !important;
+}
+
+.mat-subheader {
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.icon-dash {
+    color: rgb(231, 95, 95);
+}
+
+.icon-food {
+    color: rgb(236, 240, 41);
+}
+
+.icon-user {
+    color: rgb(37, 134, 245);
+}
+.icon-category{
+    color: #818cf8;
+}
+.icon-proto {
+    color: rgb(245, 186, 58);
+}
+.icon-order{
+    color: aquamarine;
+}
+.icon-shipper{
+    color: rgb(250, 86, 86);
+}
+.icon-combo {
+    color: rgb(240, 80, 218);
+}
+.icon-loyalty{
+    color: rgb(87, 21, 56);
+}
+.food{
+    color: rgb(75, 75, 5);
+}
+.icon-feedb {
+    color: #6b7db8;
+}
+.icon-reoprt{
+    color: #8890b5;
+}
+.mat-expansion-panel {
+    box-sizing: content-box;
+    box-shadow: none;
+    display: block;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background-color: #2d323e;
+    
+}
+.mat-expansion-panel{
+    color: white;
+}
+
+

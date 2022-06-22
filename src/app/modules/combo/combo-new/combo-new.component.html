@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Thêm mới món</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productInput" class="example-form">
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Tên </mat-label>
+          <input type="text" formControlName="name" matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Mô tả </mat-label>
+          <input type="text" formControlName="comboDesc" matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Giá</mat-label>
+          <input type="text" formControlName="price" matInput placeholder="Name">
+        </mat-form-field>
+      </div>
+      <button (click)="addItem()" class="btn">Thêm món</button>
+
+      <div class="col-12" formArrayName="foodList" *ngFor="let item  of formArr.controls; let i = index;">
+        <div [formGroupName]="i">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Danh sách món</mat-label>
+            <mat-select formControlName="foodId" placeholder="Category" class="example-full-width">
+              <mat-option value="1">Món bán chạy</mat-option>
+              <mat-option value="2">Món theo combo</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <label>số lượng</label>
+            <input formControlName="numberItem" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </form>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Đóng</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addPro()">{{actionBtn}}</button>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #fff;
+    background: #5e72e4;
+    height: 200px;
+    border-top: solid 20px #5e72e4;
+    margin-top: -5px;
+    padding-left: 2%;
+    font-family: Open Sans,sans-serif;
+  
+  }
+  
+  
+  
+  .tbl-main {
+    padding: 0 2%;
+    margin-top: -150px;
+  
+  }
+  
+  .add{
+    background-color: #5e72e4;
+    color: #fff;
+    font-family: Open Sans,sans-serif;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 20%;
+  }
+  .mat-header-cell{
+    text-transform: uppercase;
+    font-family: Open Sans,sans-serif;
+    color: #8898aa;
+  }
+  .mat-cell{
+    color: #525f7f;
+    text-transform:capitalize;
+    font-family: Open Sans,sans-serif;
+  }

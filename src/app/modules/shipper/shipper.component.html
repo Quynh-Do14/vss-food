@@ -1,0 +1,65 @@
+<h1 class="title">Quản lý Shipper</h1>
+<div class="tbl-main">
+    <mat-toolbar>
+        <mat-form-field appearance="standard">
+            <input type="search" matInput placeholder="Tìm kiếm" name="search">
+            <button matSuffix mat-button>
+
+            </button>
+        </mat-form-field>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="warn" (click)="openDialog()">Thêm mới</button>
+    </mat-toolbar>
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+            <!-- ID Column -->
+
+            <!-- <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+            </ng-container> -->
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Tên người giao hàng </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="phone">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Số điện thoại </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.phone}} </mat-cell>
+            </ng-container>
+
+
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Trạng thái</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{statusList[row.status]?.text || ''}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Lựa Chọn </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="editShipper(row)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deleteShiper(row.id)" color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="shiper(row)" color="warn">
+                        <mat-icon class="icon-order">assignment</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+</div>

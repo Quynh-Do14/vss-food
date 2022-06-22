@@ -1,0 +1,69 @@
+<h1 class="title">Quản lý món</h1>
+<div class="tbl-main">
+    <mat-toolbar>
+        <mat-form-field appearance="standard">
+            <input type="search" matInput placeholder="Tìm kiếm" name="search">
+            <button matSuffix mat-button>
+            </button>
+        </mat-form-field>
+        <span class="example-spacer"></span>
+        <button mat-raised-button color="warn" (click)="openDialog()">Thêm mới</button>
+    </mat-toolbar>
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+            <!-- ID Column -->
+            <ng-container matColumnDef="foodName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Tên Món Ăn </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.foodName}} </mat-cell>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="averageVote">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Đánh giá </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.averageVote}} </mat-cell>
+            </ng-container>
+
+
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Mô tả</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Giá </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.price}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="categories">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Danh mục</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.categories}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="images">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Ảnh món</mat-header-cell>
+                <mat-cell *matCellDef="let row"> <img src={{row.images}} width="70px"> </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Trạng thái</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{statusList[row.status]?.text || ''}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Lựa Chọn </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="editProduct(row)" color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deletePro(row.id)" color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+</div>
